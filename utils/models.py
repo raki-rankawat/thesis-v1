@@ -15,6 +15,8 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
+from torchvision.models import vgg16_bn, VGG16_BN_Weights
+
 
 # ── Shared weight init ────────────────────────────────
 
@@ -113,6 +115,38 @@ class VWW_VGGStyle(nn.Module):
 
     def forward(self, x):
         return self.classifier(self.features(x))
+    
+
+# ── VGG-Style Pretrained ────────────────────────────────────────────
+
+class VGG_Pretrained(nn.Module):
+    def __init__(self, num_classes=2):
+        super().__init__()
+        base = vgg16_bn(weights=VGG16_BN_Weights.IMAGENET1K_V1)
+        self.features   = base.features
+        self.avgpool    = base.avgpool
+        self.classifier = nn.Sequential(
+            nn.Linear(25088, 512), nn.ReLU(inplace=True), nn.Dropout(0.5),
+            nn.Linear(512,   128), nn.ReLU(inplace=True), nn.Dropout(0.3),
+            nn.Linear(128, num_classes),
+        )
+        for p in self.features.parameters():
+            p.requires_grad = False   # backbone frozen initially
+
+    def forward(self, x):
+        x = self.features(x)
+        x = self.avgpool(x)
+        return self.classifier(x.view(x.size(0), -1))
+
+    def unfreeze_top(self):
+        for p in self.features[24:].parameters():
+            p.requires_grad = True
+        print("🔥 VGG16-BN: unfroze features[24:]")
+
+    def unfreeze_all(self):
+        for p in self.features.parameters():
+            p.requires_grad = True
+        print("🔥 VGG16-BN: unfroze all features")
 
 
 # ── ResNet ────────────────────────────────────────────
