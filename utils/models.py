@@ -4,12 +4,13 @@
 #
 # Models:
 #   VWW_MobileNetV2  — truncated MobileNetV2, primary deployment model
+#   VWW_MobileNetV3  — truncated MobileNetV3-Small style, SE + h-swish
 #   VWW_VGGStyle     — custom 4-block VGG, used as teacher in KD
 #   VWW_ResNet       — custom lightweight ResNet, comparison baseline
 #
-# NOTE: VWW_MobileNetV2 is a custom truncated variant (7 IR blocks,
-# 512-wide final conv), NOT the full published MobileNetV2 spec.
-# Do not compare accuracy numbers to published MobileNetV2 benchmarks.
+# NOTE: VWW_MobileNetV2 and VWW_MobileNetV3 are custom truncated variants
+# designed for 96×96 VWW input and STM32 memory constraints.
+# Do not compare accuracy numbers to published MobileNetV3 benchmarks.
 # =====================================================
 
 import torch.nn as nn
@@ -73,6 +74,121 @@ class VWW_MobileNetV2(nn.Module):
             nn.AdaptiveAvgPool2d(1),
         )
         self.classifier = nn.Linear(512, num_classes)
+        _init_weights(self)
+
+    def forward(self, x):
+        x = self.initial(x)
+        x = self.features(x)
+        x = self.head(x)
+        return self.classifier(x.view(x.size(0), -1))
+
+
+# ── MobileNetV3 ───────────────────────────────────────
+#
+# Key differences vs MobileNetV2:
+#   • Hard-swish activation instead of ReLU6
+#   • Hard-sigmoid inside SE blocks instead of sigmoid
+#   • Squeeze-and-Excitation (SE) on selected layers
+#   • Narrower expansion ratios → fewer params
+#
+# Architecture: 6 bottleneck blocks, 256-wide final conv
+# Input: 96×96×3   Output: 2-class logits
+
+class _HardSwish(nn.Module):
+    def forward(self, x):
+        return x * F.relu6(x + 3.0, inplace=True) / 6.0
+
+
+class _HardSigmoid(nn.Module):
+    def forward(self, x):
+        return F.relu6(x + 3.0, inplace=True) / 6.0
+
+
+class _SEBlock(nn.Module):
+    """Squeeze-and-Excitation: recalibrates channel responses."""
+    def __init__(self, channels, reduction=4):
+        super().__init__()
+        squeezed = max(1, channels // reduction)
+        self.se = nn.Sequential(
+            nn.AdaptiveAvgPool2d(1),
+            nn.Conv2d(channels, squeezed, 1, bias=True),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(squeezed, channels, 1, bias=True),
+            _HardSigmoid(),
+        )
+
+    def forward(self, x):
+        return x * self.se(x)
+
+
+class _V3Bottleneck(nn.Module):
+    """
+    MobileNetV3 bottleneck.
+    in_ch, exp_ch, out_ch : channel sizes
+    stride                : 1 (same) or 2 (downsample)
+    use_se                : add Squeeze-and-Excitation
+    use_hs                : hard-swish (True) or ReLU (False)
+    """
+    def __init__(self, in_ch, exp_ch, out_ch, stride, use_se, use_hs):
+        super().__init__()
+        self.use_residual = (stride == 1 and in_ch == out_ch)
+        act = _HardSwish() if use_hs else nn.ReLU(inplace=True)
+        layers = []
+        if exp_ch != in_ch:
+            layers += [nn.Conv2d(in_ch, exp_ch, 1, bias=False),
+                       nn.BatchNorm2d(exp_ch), act]
+        layers += [
+            nn.Conv2d(exp_ch, exp_ch, 3, stride=stride, padding=1,
+                      groups=exp_ch, bias=False),
+            nn.BatchNorm2d(exp_ch), act,
+        ]
+        if use_se:
+            layers.append(_SEBlock(exp_ch))
+        layers += [
+            nn.Conv2d(exp_ch, out_ch, 1, bias=False),
+            nn.BatchNorm2d(out_ch),
+        ]
+        self.block = nn.Sequential(*layers)
+
+    def forward(self, x):
+        return x + self.block(x) if self.use_residual else self.block(x)
+
+
+class VWW_MobileNetV3(nn.Module):
+    """
+    Truncated MobileNetV3-Small style for 96x96 VWW.
+    Comparable parameter count to VWW_MobileNetV2 for fair comparison.
+
+    Block config: (in_ch, exp_ch, out_ch, stride, use_se, use_hs)
+    """
+    def __init__(self, num_classes=2):
+        super().__init__()
+        self.initial = nn.Sequential(
+            nn.Conv2d(3, 16, 3, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(16),
+            _HardSwish(),
+        )
+        cfg = [
+            (16,  16,  16, 1, False, False),
+            (16,  72,  24, 2, False, False),
+            (24,  88,  24, 1, False, False),
+            (24,  96,  40, 2, True,  True),
+            (40, 240,  40, 1, True,  True),
+            (40, 120,  48, 1, True,  True),
+        ]
+        self.features = nn.Sequential(*[_V3Bottleneck(*c) for c in cfg])
+        self.head = nn.Sequential(
+            nn.Conv2d(48, 256, 1, bias=False),
+            nn.BatchNorm2d(256),
+            _HardSwish(),
+            nn.AdaptiveAvgPool2d(1),
+        )
+        self.classifier = nn.Sequential(
+            nn.Linear(256, 128),
+            _HardSwish(),
+            nn.Dropout(0.2),
+            nn.Linear(128, num_classes),
+        )
         _init_weights(self)
 
     def forward(self, x):
