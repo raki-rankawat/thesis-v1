@@ -265,6 +265,60 @@ class VGG_Pretrained(nn.Module):
         print("🔥 VGG16-BN: unfroze all features")
 
 
+
+# ── ResNet50 Pretrained ──────────────────────────────────────────────
+
+class ResNet_Pretrained(nn.Module):
+    """
+    ResNet50 fine-tuned from ImageNet weights on VWW.
+
+    Progressive unfreeze strategy (mirrors VGG_Pretrained):
+      Phase 1: backbone fully frozen  → train head only
+      Phase 2: unfreeze layer3+layer4 → mid-level features adapt
+      Phase 3: unfreeze all           → full fine-tune at low LR
+
+    Head: 2048 → 512 → 128 → 2  (replaces ImageNet fc)
+    Input: 96×96×3 (works; ResNet downsamples aggressively enough)
+    """
+    def __init__(self, num_classes=2):
+        super().__init__()
+        from torchvision.models import resnet50, ResNet50_Weights
+        base = resnet50(weights=ResNet50_Weights.IMAGENET1K_V1)
+
+        # Drop the original fc; keep everything else as backbone
+        self.backbone = nn.Sequential(
+            base.conv1, base.bn1, base.relu, base.maxpool,
+            base.layer1, base.layer2, base.layer3, base.layer4,
+            base.avgpool,
+        )
+        self.classifier = nn.Sequential(
+            nn.Linear(2048, 512), nn.ReLU(inplace=True), nn.Dropout(0.5),
+            nn.Linear(512,  128), nn.ReLU(inplace=True), nn.Dropout(0.3),
+            nn.Linear(128, num_classes),
+        )
+        # Phase 1: freeze entire backbone
+        for p in self.backbone.parameters():
+            p.requires_grad = False
+
+    def forward(self, x):
+        x = self.backbone(x)
+        return self.classifier(x.view(x.size(0), -1))
+
+    def unfreeze_top(self):
+        """Phase 2: unfreeze layer3 and layer4 (indices 6 and 7 in backbone)."""
+        for p in self.backbone[6].parameters():   # layer3
+            p.requires_grad = True
+        for p in self.backbone[7].parameters():   # layer4
+            p.requires_grad = True
+        print("🔥 ResNet50: unfroze layer3 + layer4")
+
+    def unfreeze_all(self):
+        """Phase 3: unfreeze entire backbone."""
+        for p in self.backbone.parameters():
+            p.requires_grad = True
+        print("🔥 ResNet50: unfroze all backbone layers")
+
+
 # ── ResNet ────────────────────────────────────────────
 
 class _BasicBlock(nn.Module):
