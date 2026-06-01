@@ -1,0 +1,553 @@
+
+
+C:/Users/rakes/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/10.2.0/Utilities/windows/stedgeai.exe generate --target stm32n6 --name network -m C:/Users/rakes/Downloads/model_fp32.onnx --st-neural-art n6-allmems-O3@C:/Users/rakes/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/10.2.0/scripts/N6_scripts/user_neuralart.json --workspace C:/Users/rakes/AppData/Local/Temp/mxAI_workspace4681504192094008368425965828301477 --output C:/Users/rakes/.stm32cubemx/network_output 
+ST Edge AI Core v2.2.0-20266 2adc00962 
+WARNING: _initial_initial_0_Conv_output_0 is not quantized 
+WARNING: _initial_initial_2_Clip_output_0 is not quantized 
+WARNING: _features_features_0_block_block_0_Conv_output_0 is not quantized 
+WARNING: _features_features_0_block_block_2_Clip_output_0 is not quantized 
+WARNING: _features_features_0_block_block_3_Conv_output_0 is not quantized 
+WARNING: _features_features_0_block_block_5_Clip_output_0 is not quantized 
+WARNING: _features_features_0_block_block_6_Conv_output_0 is not quantized 
+WARNING: _features_features_1_block_block_0_Conv_output_0 is not quantized 
+WARNING: _features_features_1_block_block_2_Clip_output_0 is not quantized 
+WARNING: _features_features_1_block_block_3_Conv_output_0 is not quantized 
+WARNING: _features_features_1_block_block_5_Clip_output_0 is not quantized 
+WARNING: _features_features_1_block_block_6_Conv_output_0 is not quantized 
+WARNING: _features_features_2_block_block_0_Conv_output_0 is not quantized 
+WARNING: _features_features_2_block_block_2_Clip_output_0 is not quantized 
+WARNING: _features_features_2_block_block_3_Conv_output_0 is not quantized 
+WARNING: _features_features_2_block_block_5_Clip_output_0 is not quantized 
+WARNING: _features_features_2_block_block_6_Conv_output_0 is not quantized 
+WARNING: _features_features_2_Add_output_0 is not quantized 
+WARNING: _features_features_3_block_block_0_Conv_output_0 is not quantized 
+WARNING: _features_features_3_block_block_2_Clip_output_0 is not quantized 
+WARNING: _features_features_3_block_block_3_Conv_output_0 is not quantized 
+WARNING: _features_features_3_block_block_5_Clip_output_0 is not quantized 
+WARNING: _features_features_3_block_block_6_Conv_output_0 is not quantized 
+WARNING: _features_features_4_block_block_0_Conv_output_0 is not quantized 
+WARNING: _features_features_4_block_block_2_Clip_output_0 is not quantized 
+WARNING: _features_features_4_block_block_3_Conv_output_0 is not quantized 
+WARNING: _features_features_4_block_block_5_Clip_output_0 is not quantized 
+WARNING: _features_features_4_block_block_6_Conv_output_0 is not quantized 
+WARNING: _features_features_4_Add_output_0 is not quantized 
+WARNING: _features_features_5_block_block_0_Conv_output_0 is not quantized 
+WARNING: _features_features_5_block_block_2_Clip_output_0 is not quantized 
+WARNING: _features_features_5_block_block_3_Conv_output_0 is not quantized 
+WARNING: _features_features_5_block_block_5_Clip_output_0 is not quantized 
+WARNING: _features_features_5_block_block_6_Conv_output_0 is not quantized 
+WARNING: _features_features_6_block_block_0_Conv_output_0 is not quantized 
+WARNING: _features_features_6_block_block_2_Clip_output_0 is not quantized 
+WARNING: _features_features_6_block_block_3_Conv_output_0 is not quantized 
+WARNING: _features_features_6_block_block_5_Clip_output_0 is not quantized 
+WARNING: _features_features_6_block_block_6_Conv_output_0 is not quantized 
+WARNING: _features_features_6_Add_output_0 is not quantized 
+WARNING: _head_head_0_Conv_output_0 is not quantized 
+WARNING: _head_head_2_Clip_output_0 is not quantized 
+WARNING: _head_head_3_GlobalAveragePool_output_0 is not quantized 
+WARNING: _Reshape_output_0 is not quantized 
+WARNING: logits is not quantized 
+ >>>> EXECUTING NEURAL ART COMPILER 
+   C:/Users/rakes/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/10.2.0/Utilities/windows/atonn.exe -i "C:/Users/rakes/.stm32cubemx/network_output/model_fp32_OE_3_3_0.onnx" --json-quant-file "C:/Users/rakes/.stm32cubemx/network_output/model_fp32_OE_3_3_0_Q.json" -g "network.c" --load-mdesc "C:/Users/rakes/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/10.2.0/scripts/N6_scripts/my_mdescs/stm32n6.mdesc" --load-mpool "C:/Users/rakes/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/10.2.0/scripts/N6_scripts/my_mpools/stm32n6.mpool" --save-mpool-file "C:/Users/rakes/AppData/Local/Temp/mxAI_workspace4681504192094008368425965828301477/neural_art__network/stm32n6.mpool" --out-dir-prefix "C:/Users/rakes/AppData/Local/Temp/mxAI_workspace4681504192094008368425965828301477/neural_art__network/" --optimization 3 --all-buffers-info --mvei --cache-maintenance --Oauto-sched --native-float --enable-virtual-mem-pools --Omax-ca-pipe 4 --Ocache-opt --Os --output-info-file "c_info.json" 
+ <<<< DONE EXECUTING NEURAL ART COMPILER 
+  
+ Exec/report summary (generate) 
+ ------------------------------------------------------------------------------------------------------------ 
+ model file         :   C:\Users\rakes\Downloads\model_fp32.onnx                                              
+ type               :   onnx                                                                                  
+ c_name             :   network                                                                               
+ options            :   allocate-inputs, allocate-outputs                                                     
+ optimization       :   balanced                                                                              
+ target/series      :   stm32n6npu                                                                            
+ workspace dir      :   C:\Users\rakes\AppData\Local\Temp\mxAI_workspace4681504192094008368425965828301477    
+ output dir         :   C:\Users\rakes\.stm32cubemx\network_output                                            
+ model_fmt          :   float                                                                                 
+ model_name         :   model_fp32                                                                            
+ model_hash         :   0x73d06f02d132c4fafbef9e5870a210bd                                                    
+ params #           :   148,706 items (580.88 KiB)                                                            
+ ------------------------------------------------------------------------------------------------------------ 
+ input 1/1          :   'Input_0_out_0', f32(1x3x96x96), 108.00 KBytes, activations                           
+ output 1/1         :   'Gemm_45_out_0', f32(1x2), 8 Bytes, activations                                       
+ macc               :   0                                                                                     
+ weights (ro)       :   637,448 B (622.51 KiB) (1 segment) / +42,624(+7.2%) vs float model                    
+ activations (rw)   :   1,658,880 B (1.58 MiB) (3 segments) *                                                 
+ ram (total)        :   1,658,880 B (1.58 MiB) = 1,658,880 + 0 + 0                                            
+ ------------------------------------------------------------------------------------------------------------ 
+ (*) 'input'/'output' buffers are allocated in the activations buffer 
+Computing AI RT data/code size (target=stm32n6npu).. 
+Compilation details 
+   --------------------------------------------------------------------------------- 
+Compiler version: 1.1.1-14 
+Compiler arguments:  -i C:\Users\rakes\.stm32cubemx\network_output\model_fp32_OE_3_3_0.onnx --json-quant-file C:\Users\rakes\.stm32cubemx\network_output\model_fp32_OE_3_3_0_Q.json -g network.c --load-mdesc C:\Users\rakes\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\10.2.0\scripts\N6_scripts\my_mdescs\stm32n6.mdesc --load-mpool C:\Users\rakes\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\10.2.0\scripts\N6_scripts\my_mpools\stm32n6.mpool --save-mpool-file C:\Users\rakes\AppData\Local\Temp\mxAI_workspace4681504192094008368425965828301477\neural_art__network\stm32n6.mpool --out-dir-prefix C:\Users\rakes\AppData\Local\Temp\mxAI_workspace4681504192094008368425965828301477\neural_art__network/ --optimization 3 --all-buffers-info --mvei --cache-maintenance --Oauto-sched --native-float --enable-virtual-mem-pools --Omax-ca-pipe 4 --Ocache-opt --Os --output-info-file c_info.json 
+==================================================================================== 
+Memory usage information  (input/output buffers are included in activations) 
+   --------------------------------------------------------------------------------- 
+ flexMEM    [0x34000000 - 0x34000000]:          0  B /          0  B  (  0.00 % used) -- weights:          0  B (  0.00 % used)  activations:          0  B (  0.00 % used) 
+ cpuRAM1    [0x34064000 - 0x34064000]:          0  B /          0  B  (  0.00 % used) -- weights:          0  B (  0.00 % used)  activations:          0  B (  0.00 % used) 
+ cpuRAM2    [0x34100000 - 0x34200000]:    864.000 kB /      1.000 MB  ( 84.38 % used) -- weights:          0  B (  0.00 % used)  activations:    864.000 kB ( 84.38 % used) 
+ npuRAM3    [0x34200000 - 0x34270000]:          0  B /    448.000 kB  (  0.00 % used) -- weights:          0  B (  0.00 % used)  activations:          0  B (  0.00 % used) 
+ npuRAM4    [0x34270000 - 0x342E0000]:    324.000 kB /    448.000 kB  ( 72.32 % used) -- weights:          0  B (  0.00 % used)  activations:    324.000 kB ( 72.32 % used) 
+ npuRAM5    [0x342E0000 - 0x34350000]:    432.000 kB /    448.000 kB  ( 96.43 % used) -- weights:          0  B (  0.00 % used)  activations:    432.000 kB ( 96.43 % used) 
+ npuRAM6    [0x34350000 - 0x343C0000]:          0  B /    448.000 kB  (  0.00 % used) -- weights:          0  B (  0.00 % used)  activations:          0  B (  0.00 % used) 
+ octoFlash  [0x71000000 - 0x78000000]:    622.508 kB /    112.000 MB  (  0.54 % used) -- weights:    622.508 kB (  0.54 % used)  activations:          0  B (  0.00 % used) 
+ hyperRAM   [0x90000000 - 0x92000000]:          0  B /     32.000 MB  (  0.00 % used) -- weights:          0  B (  0.00 % used)  activations:          0  B (  0.00 % used) 
+Total:                                             2.190 MB                                  -- weights:    622.508 kB                  activations:      1.582 MB 
+==================================================================================== 
+Used memory ranges 
+   --------------------------------------------------------------------------------- 
+ cpuRAM2    [0x34100000 - 0x34200000]: 0x34100000-0x341D8000 
+ npuRAM4    [0x34270000 - 0x342E0000]: 0x34270000-0x342C1000 
+ npuRAM5    [0x342E0000 - 0x34350000]: 0x342E0000-0x3434C000 
+ octoFlash  [0x71000000 - 0x78000000]: 0x71000000-0x7109BA10 
+==================================================================================== 
+Epochs details 
+   --------------------------------------------------------------------------------- 
+Total number of epochs: 47 of which 45 implemented in software 
+epoch ID   HW/SW/EC Operation (SW only) 
+epoch 1       HW 
+epoch 2      -SW-   (        Conv        ) 
+epoch 3      -SW-   (        Clip        ) 
+epoch 4      -SW-   (        Conv        ) 
+epoch 5      -SW-   (        Clip        ) 
+epoch 6      -SW-   (        Conv        ) 
+epoch 7      -SW-   (        Clip        ) 
+epoch 8      -SW-   (        Conv        ) 
+epoch 9      -SW-   (        Conv        ) 
+epoch 10     -SW-   (        Clip        ) 
+epoch 11     -SW-   (        Conv        ) 
+epoch 12     -SW-   (        Clip        ) 
+epoch 13     -SW-   (        Conv        ) 
+epoch 14     -SW-   (        Conv        ) 
+epoch 15     -SW-   (        Clip        ) 
+epoch 16     -SW-   (        Conv        ) 
+epoch 17     -SW-   (        Clip        ) 
+epoch 18     -SW-   (        Conv        ) 
+epoch 19     -SW-   (        Add         ) 
+epoch 20     -SW-   (        Conv        ) 
+epoch 21     -SW-   (        Clip        ) 
+epoch 22     -SW-   (        Conv        ) 
+epoch 23     -SW-   (        Clip        ) 
+epoch 24     -SW-   (        Conv        ) 
+epoch 25     -SW-   (        Conv        ) 
+epoch 26     -SW-   (        Clip        ) 
+epoch 27     -SW-   (        Conv        ) 
+epoch 28     -SW-   (        Clip        ) 
+epoch 29     -SW-   (        Conv        ) 
+epoch 30     -SW-   (        Add         ) 
+epoch 31     -SW-   (        Conv        ) 
+epoch 32     -SW-   (        Clip        ) 
+epoch 33     -SW-   (        Conv        ) 
+epoch 34     -SW-   (        Clip        ) 
+epoch 35     -SW-   (        Conv        ) 
+epoch 36     -SW-   (        Conv        ) 
+epoch 37     -SW-   (        Clip        ) 
+epoch 38     -SW-   (        Conv        ) 
+epoch 39     -SW-   (        Clip        ) 
+epoch 40     -SW-   (        Conv        ) 
+epoch 41     -SW-   (        Add         ) 
+epoch 42     -SW-   (        Conv        ) 
+epoch 43     -SW-   (        Clip        ) 
+epoch 44     -SW-   (    AveragePool     ) 
+epoch 45     -SW-   (        Conv        ) 
+epoch 46      HW 
+epoch 47     -SW-   (        Add         ) 
+==================================================================================== 
+ Requested memory size by section - "stm32n6npu" target 
+ ------------------------------- -------- --------- ------ ----------- 
+ module                              text    rodata   data         bss 
+ ------------------------------- -------- --------- ------ ----------- 
+ network.o                          6,664     8,108      0           0 
+ NetworkRuntime1020_CM55_GCC.a     12,756         0      0           0 
+ ll_aton_reloc_network.o                0         0      0           0 
+ lib (toolchain)*                  11,036     2,260      0           0 
+ ll atonn runtime                   7,786     6,452      0          29 
+ ------------------------------- -------- --------- ------ ----------- 
+ RT total**                        38,242    16,820      0          29 
+ ------------------------------- -------- --------- ------ ----------- 
+ weights                                0   637,448      0           0 
+ activations                            0         0      0   1,658,880 
+ io                                     0         0      0           0 
+ ------------------------------- -------- --------- ------ ----------- 
+ TOTAL                             38,242   654,268      0   1,658,909 
+ ------------------------------- -------- --------- ------ ----------- 
+ *  toolchain objects (libm/libgcc*) 
+ ** RT AI runtime objects (kernels+infrastructure) 
+  Summary - "stm32n6npu" target 
+  -------------------------------------------------- 
+               FLASH (ro)     %*    RAM (rw)      % 
+  -------------------------------------------------- 
+  RT total         55,062   8.0%          29   0.0% 
+  -------------------------------------------------- 
+  TOTAL           692,510          1,658,909 
+  -------------------------------------------------- 
+  *  rt/total 
+ Generated files (5) 
+ ----------------------------------------------------------------------- 
+ C:\Users\rakes\.stm32cubemx\network_output\model_fp32_OE_3_3_0.onnx 
+ C:\Users\rakes\.stm32cubemx\network_output\model_fp32_OE_3_3_0_Q.json 
+ C:\Users\rakes\.stm32cubemx\network_output\network.c 
+ C:\Users\rakes\.stm32cubemx\network_output\network_atonbuf.xSPI2.raw 
+ C:\Users\rakes\.stm32cubemx\network_output\network.h 
+Creating txt report file C:\Users\rakes\.stm32cubemx\network_output\network_generate_report.txt 
+elapsed time (generate): 59.234s 
+bash.exe: warning: could not find /tmp, please create! 
+06/01/2026 12:15:38 AM  __main__ -- Preparing compiler GCC 
+06/01/2026 12:15:38 AM  __main__ -- Setting a breakpoint in main.c at line 137 (before the infinite loop) 
+06/01/2026 12:15:38 AM  __main__ -- Copying network.c to project: -> C:\Users\rakes\STM32Cube\Repository\Packs\STMicroelectronics\X-CUBE-AI\10.2.0\Projects\STM32N6570-DK\Applications\NPU_Validation\X-CUBE-AI\App\network.c 
+06/01/2026 12:15:38 AM  __main__ -- Extracting information from the c-file 
+06/01/2026 12:15:39 AM  __main__ -- Converting memory files in results/<model>/generation/ to Intel-hex with proper offsets 
+06/01/2026 12:15:39 AM  __main__ -- arm-none-eabi-objcopy.exe --change-addresses 0x71000000 -Ibinary -Oihex network_atonbuf.xSPI2.raw network_atonbuf.xSPI2.hex 
+06/01/2026 12:15:39 AM  __main__ -- Resetting the board... 
+06/01/2026 12:15:40 AM  __main__ -- Flashing memory xSPI2 -- 637.448 kB 
+06/01/2026 12:15:47 AM  __main__ -- Building project (conf= N6-DK) 
+06/01/2026 12:15:52 AM  __main__ -- Loading internal memories & Running the program 
+06/01/2026 12:15:55 AM  __main__ -- Start operation achieved successfully 
+Build is Done 
+Starting AI validation on target with custom dataset : C:\Users\rakes\Downloads\test_input.npz... 
+C:/Users/rakes/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/10.2.0/Utilities/windows/stedgeai.exe validate --target stm32n6 --name network -m C:/Users/rakes/Downloads/model_fp32.onnx --st-neural-art n6-allmems-O3@C:/Users/rakes/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/10.2.0/scripts/N6_scripts/user_neuralart.json --workspace C:/Users/rakes/AppData/Local/Temp/mxAI_workspace4682338556414001962625931251803568 --output C:/Users/rakes/.stm32cubemx/network_output --mode target --valinput C:/Users/rakes/Downloads/test_input.npz --desc serial:921600 
+ST Edge AI Core v2.2.0-20266 2adc00962 
+Setting validation data... 
+ loading file: C:\Users\rakes\Downloads\test_input.npz 
+  available entries: ['input'] selector="None" 
+   I[1]: (200, 3, 96, 96)/float32, min/max=[-2.117904, 2.640000], mean/std=[0.022955, 1.148064] 
+ no output/reference samples are provided 
+Creating c (debug) info json file C:\Users\rakes\.stm32cubemx\network_output\network_c_info.json 
+  
+ Exec/report summary (validate) 
+ ------------------------------------------------------------------------------------------------------------ 
+ model file         :   C:\Users\rakes\Downloads\model_fp32.onnx                                              
+ type               :   onnx                                                                                  
+ c_name             :   network                                                                               
+ options            :   allocate-inputs, allocate-outputs                                                     
+ optimization       :   balanced                                                                              
+ target/series      :   stm32n6npu                                                                            
+ workspace dir      :   C:\Users\rakes\AppData\Local\Temp\mxAI_workspace4682338556414001962625931251803568    
+ output dir         :   C:\Users\rakes\.stm32cubemx\network_output                                            
+ vinput files       :   C:\Users\rakes\Downloads\test_input.npz                                               
+ model_fmt          :   float                                                                                 
+ model_name         :   model_fp32                                                                            
+ model_hash         :   0x73d06f02d132c4fafbef9e5870a210bd                                                    
+ params #           :   148,706 items (580.88 KiB)                                                            
+ ------------------------------------------------------------------------------------------------------------ 
+ input 1/1          :   'input', f32(1x3x96x96), 108.00 KBytes, activations                                   
+ output 1/1         :   'logits', f32(1x2), 8 Bytes, activations                                              
+ macc               :   27,470,178                                                                            
+ weights (ro)       :   594,824 B (580.88 KiB) (1 segment)                                                    
+ activations (rw)   :   928,200 B (906.45 KiB) (1 segment) *                                                  
+ ram (total)        :   928,200 B (906.45 KiB) = 928,200 + 0 + 0                                              
+ ------------------------------------------------------------------------------------------------------------ 
+ (*) 'input'/'output' buffers are allocated in the activations buffer 
+Running the ONNX model... 
+Running the ST.AI c-model (AI RUNNER)...(name=network, mode=TARGET) 
+ Proto-buffer driver v2.0 (msg v3.1) (Serial driver v1.0 - COM3:921600) ['network'] 
+  Summary 'network' - ['network'] 
+  ---------------------------------------------------------------------------------------------------------------------------------------- 
+  I[1/1] 'Input_0_out_0'   :   f32[1,3,96,96], 110592 Bytes, activations 
+  O[1/1] 'Gemm_45_out_0'   :   f32[1,2], 8 Bytes, activations 
+  n_nodes                  :   46 
+  activations              :   1658880 
+  compile_datetime         :   Dec 23 2025 18:55:11 
+  ---------------------------------------------------------------------------------------------------------------------------------------- 
+  protocol                 :   Proto-buffer driver v2.0 (msg v3.1) (Serial driver v1.0 - COM3:921600) 
+  tools                    :   ST Neural ART (LL_ATON api) v1.1.1 
+  runtime lib              :   atonn-v1.1.1-14-ge619e860 (optimized SW lib v10.1.0-ae536891 GCC) 
+  capabilities             :   IO_ONLY, PER_LAYER, PER_LAYER_WITH_DATA 
+  device.desc              :   stm32 family - 0x486 - STM32N6xx @800/400MHz 
+  device.attrs             :   fpu,core_icache,core_dcache,npu_cache=1,mcu_freq=800MHz,noc_freq=400MHz,npu_freq=1000MHz,nic_freq=900MHz 
+  ---------------------------------------------------------------------------------------------------------------------------------------- 
+ Warning: C-network signature checking is skipped on ST Neurla-ART NPU 
+STAI.IO:   0%|          | 0/200 [00:00<?, ?it/s] 
+STAI.IO:   1%|1         | 2/200 [00:03<06:29,  1.97s/it] 
+STAI.IO:   2%|2         | 4/200 [00:11<10:01,  3.07s/it] 
+STAI.IO:   2%|2         | 5/200 [00:15<10:53,  3.35s/it] 
+STAI.IO:   3%|3         | 6/200 [00:18<11:16,  3.49s/it] 
+STAI.IO:   4%|3         | 7/200 [00:22<11:16,  3.51s/it] 
+STAI.IO:   4%|4         | 8/200 [00:26<11:33,  3.61s/it] 
+STAI.IO:   4%|4         | 9/200 [00:30<11:39,  3.66s/it] 
+STAI.IO:   5%|5         | 10/200 [00:33<11:44,  3.71s/it] 
+STAI.IO:   6%|5         | 11/200 [00:37<11:49,  3.76s/it] 
+STAI.IO:   6%|6         | 12/200 [00:41<11:49,  3.77s/it] 
+STAI.IO:   6%|6         | 13/200 [00:45<11:47,  3.78s/it] 
+STAI.IO:   7%|7         | 14/200 [00:49<11:34,  3.74s/it] 
+STAI.IO:   8%|7         | 15/200 [00:52<11:31,  3.74s/it] 
+STAI.IO:   8%|8         | 16/200 [00:56<11:34,  3.77s/it] 
+STAI.IO:   8%|8         | 17/200 [01:00<11:26,  3.75s/it] 
+STAI.IO:   9%|9         | 18/200 [01:04<11:23,  3.75s/it] 
+STAI.IO:  10%|9         | 19/200 [01:07<11:18,  3.75s/it] 
+STAI.IO:  10%|#         | 20/200 [01:11<11:15,  3.75s/it] 
+STAI.IO:  10%|#         | 21/200 [01:15<11:19,  3.80s/it] 
+STAI.IO:  11%|#1        | 22/200 [01:19<11:08,  3.75s/it] 
+STAI.IO:  12%|#1        | 23/200 [01:22<10:50,  3.68s/it] 
+STAI.IO:  12%|#2        | 24/200 [01:26<10:53,  3.72s/it] 
+STAI.IO:  12%|#2        | 25/200 [01:30<10:57,  3.76s/it] 
+STAI.IO:  13%|#3        | 26/200 [01:34<10:57,  3.78s/it] 
+STAI.IO:  14%|#3        | 27/200 [01:37<10:51,  3.77s/it] 
+STAI.IO:  14%|#4        | 28/200 [01:41<10:48,  3.77s/it] 
+STAI.IO:  14%|#4        | 29/200 [01:45<10:45,  3.77s/it] 
+STAI.IO:  15%|#5        | 30/200 [01:49<10:36,  3.75s/it] 
+STAI.IO:  16%|#5        | 31/200 [01:52<10:36,  3.77s/it] 
+STAI.IO:  16%|#6        | 32/200 [01:56<10:37,  3.79s/it] 
+STAI.IO:  16%|#6        | 33/200 [02:00<10:36,  3.81s/it] 
+STAI.IO:  17%|#7        | 34/200 [02:04<10:28,  3.79s/it] 
+STAI.IO:  18%|#7        | 35/200 [02:08<10:26,  3.79s/it] 
+STAI.IO:  18%|#8        | 36/200 [02:11<10:18,  3.77s/it] 
+STAI.IO:  18%|#8        | 37/200 [02:15<10:16,  3.78s/it] 
+STAI.IO:  19%|#9        | 38/200 [02:19<10:10,  3.77s/it] 
+STAI.IO:  20%|#9        | 39/200 [02:23<09:55,  3.70s/it] 
+STAI.IO:  20%|##        | 40/200 [02:26<09:54,  3.72s/it] 
+STAI.IO:  20%|##        | 41/200 [02:30<09:54,  3.74s/it] 
+STAI.IO:  21%|##1       | 42/200 [02:34<09:54,  3.76s/it] 
+STAI.IO:  22%|##1       | 43/200 [02:38<09:51,  3.77s/it] 
+STAI.IO:  22%|##2       | 44/200 [02:41<09:41,  3.73s/it] 
+STAI.IO:  22%|##2       | 45/200 [02:45<09:44,  3.77s/it] 
+STAI.IO:  23%|##3       | 46/200 [02:49<09:36,  3.74s/it] 
+STAI.IO:  24%|##3       | 47/200 [02:53<09:36,  3.77s/it] 
+STAI.IO:  24%|##4       | 48/200 [02:57<09:35,  3.78s/it] 
+STAI.IO:  24%|##4       | 49/200 [03:00<09:32,  3.79s/it] 
+STAI.IO:  25%|##5       | 50/200 [03:04<09:29,  3.80s/it] 
+STAI.IO:  26%|##5       | 51/200 [03:08<09:13,  3.72s/it] 
+STAI.IO:  26%|##6       | 52/200 [03:11<09:02,  3.67s/it] 
+STAI.IO:  26%|##6       | 53/200 [03:15<08:54,  3.64s/it] 
+STAI.IO:  27%|##7       | 54/200 [03:18<08:47,  3.61s/it] 
+STAI.IO:  28%|##7       | 55/200 [03:22<08:46,  3.63s/it] 
+STAI.IO:  28%|##8       | 56/200 [03:25<08:36,  3.59s/it] 
+STAI.IO:  28%|##8       | 57/200 [03:29<08:27,  3.55s/it] 
+STAI.IO:  29%|##9       | 58/200 [03:32<08:20,  3.53s/it] 
+STAI.IO:  30%|##9       | 59/200 [03:36<08:12,  3.49s/it] 
+STAI.IO:  30%|###       | 60/200 [03:39<08:09,  3.50s/it] 
+STAI.IO:  30%|###       | 61/200 [03:43<08:06,  3.50s/it] 
+STAI.IO:  31%|###1      | 62/200 [03:46<08:00,  3.48s/it] 
+STAI.IO:  32%|###1      | 63/200 [03:50<07:57,  3.48s/it] 
+STAI.IO:  32%|###2      | 64/200 [03:53<07:53,  3.48s/it] 
+STAI.IO:  32%|###2      | 65/200 [03:57<07:48,  3.47s/it] 
+STAI.IO:  33%|###3      | 66/200 [04:00<07:43,  3.46s/it] 
+STAI.IO:  34%|###3      | 67/200 [04:04<07:42,  3.48s/it] 
+STAI.IO:  34%|###4      | 68/200 [04:07<07:38,  3.47s/it] 
+STAI.IO:  34%|###4      | 69/200 [04:11<07:34,  3.47s/it] 
+STAI.IO:  35%|###5      | 70/200 [04:14<07:33,  3.49s/it] 
+STAI.IO:  36%|###5      | 71/200 [04:18<07:29,  3.49s/it] 
+STAI.IO:  36%|###6      | 72/200 [04:21<07:25,  3.48s/it] 
+STAI.IO:  36%|###6      | 73/200 [04:25<07:21,  3.47s/it] 
+STAI.IO:  37%|###7      | 74/200 [04:28<07:15,  3.45s/it] 
+STAI.IO:  38%|###7      | 75/200 [04:31<07:11,  3.45s/it] 
+STAI.IO:  38%|###8      | 76/200 [04:35<07:08,  3.46s/it] 
+STAI.IO:  38%|###8      | 77/200 [04:38<07:06,  3.46s/it] 
+STAI.IO:  39%|###9      | 78/200 [04:42<07:01,  3.45s/it] 
+STAI.IO:  40%|###9      | 79/200 [04:45<06:57,  3.45s/it] 
+STAI.IO:  40%|####      | 80/200 [04:49<06:54,  3.45s/it] 
+STAI.IO:  40%|####      | 81/200 [04:52<06:52,  3.47s/it] 
+STAI.IO:  41%|####1     | 82/200 [04:56<06:48,  3.46s/it] 
+STAI.IO:  42%|####1     | 83/200 [04:59<06:44,  3.46s/it] 
+STAI.IO:  42%|####2     | 84/200 [05:03<06:40,  3.46s/it] 
+STAI.IO:  42%|####2     | 85/200 [05:06<06:37,  3.46s/it] 
+STAI.IO:  43%|####3     | 86/200 [05:09<06:36,  3.47s/it] 
+STAI.IO:  44%|####3     | 87/200 [05:13<06:33,  3.48s/it] 
+STAI.IO:  44%|####4     | 88/200 [05:16<06:27,  3.46s/it] 
+STAI.IO:  44%|####4     | 89/200 [05:20<06:25,  3.48s/it] 
+STAI.IO:  45%|####5     | 90/200 [05:23<06:22,  3.48s/it] 
+STAI.IO:  46%|####5     | 91/200 [05:27<06:18,  3.47s/it] 
+STAI.IO:  46%|####6     | 92/200 [05:30<06:15,  3.47s/it] 
+STAI.IO:  46%|####6     | 93/200 [05:34<06:11,  3.48s/it] 
+STAI.IO:  47%|####6     | 94/200 [05:37<06:08,  3.48s/it] 
+STAI.IO:  48%|####7     | 95/200 [05:41<06:06,  3.49s/it] 
+STAI.IO:  48%|####8     | 96/200 [05:44<06:02,  3.48s/it] 
+STAI.IO:  48%|####8     | 97/200 [05:48<05:58,  3.48s/it] 
+STAI.IO:  49%|####9     | 98/200 [05:51<05:55,  3.49s/it] 
+STAI.IO:  50%|####9     | 99/200 [05:55<05:49,  3.46s/it] 
+STAI.IO:  50%|#####     | 100/200 [05:58<05:47,  3.48s/it] 
+STAI.IO:  50%|#####     | 101/200 [06:02<05:44,  3.48s/it] 
+STAI.IO:  51%|#####1    | 102/200 [06:05<05:42,  3.50s/it] 
+STAI.IO:  52%|#####1    | 103/200 [06:09<05:39,  3.50s/it] 
+STAI.IO:  52%|#####2    | 104/200 [06:12<05:36,  3.50s/it] 
+STAI.IO:  52%|#####2    | 105/200 [06:16<05:31,  3.49s/it] 
+STAI.IO:  53%|#####3    | 106/200 [06:19<05:26,  3.47s/it] 
+STAI.IO:  54%|#####3    | 107/200 [06:23<05:24,  3.49s/it] 
+STAI.IO:  54%|#####4    | 108/200 [06:26<05:23,  3.51s/it] 
+STAI.IO:  55%|#####4    | 109/200 [06:30<05:17,  3.49s/it] 
+STAI.IO:  55%|#####5    | 110/200 [06:33<05:13,  3.49s/it] 
+STAI.IO:  56%|#####5    | 111/200 [06:37<05:14,  3.53s/it] 
+STAI.IO:  56%|#####6    | 112/200 [06:40<05:08,  3.51s/it] 
+STAI.IO:  56%|#####6    | 113/200 [06:44<05:04,  3.50s/it] 
+STAI.IO:  57%|#####6    | 114/200 [06:47<04:58,  3.48s/it] 
+STAI.IO:  57%|#####7    | 115/200 [06:51<04:54,  3.46s/it] 
+STAI.IO:  58%|#####8    | 116/200 [06:54<04:51,  3.47s/it] 
+STAI.IO:  58%|#####8    | 117/200 [06:57<04:47,  3.47s/it] 
+STAI.IO:  59%|#####8    | 118/200 [07:01<04:44,  3.47s/it] 
+STAI.IO:  60%|#####9    | 119/200 [07:04<04:42,  3.48s/it] 
+STAI.IO:  60%|######    | 120/200 [07:08<04:37,  3.47s/it] 
+STAI.IO:  60%|######    | 121/200 [07:11<04:33,  3.46s/it] 
+STAI.IO:  61%|######1   | 122/200 [07:15<04:29,  3.46s/it] 
+STAI.IO:  62%|######1   | 123/200 [07:18<04:27,  3.47s/it] 
+STAI.IO:  62%|######2   | 124/200 [07:22<04:25,  3.49s/it] 
+STAI.IO:  62%|######2   | 125/200 [07:25<04:22,  3.50s/it] 
+STAI.IO:  63%|######3   | 126/200 [07:29<04:17,  3.49s/it] 
+STAI.IO:  64%|######3   | 127/200 [07:32<04:15,  3.50s/it] 
+STAI.IO:  64%|######4   | 128/200 [07:36<04:12,  3.50s/it] 
+STAI.IO:  64%|######4   | 129/200 [07:39<04:08,  3.50s/it] 
+STAI.IO:  65%|######5   | 130/200 [07:43<04:05,  3.50s/it] 
+STAI.IO:  66%|######5   | 131/200 [07:46<04:01,  3.50s/it] 
+STAI.IO:  66%|######6   | 132/200 [07:50<03:58,  3.51s/it] 
+STAI.IO:  66%|######6   | 133/200 [07:53<03:54,  3.51s/it] 
+STAI.IO:  67%|######7   | 134/200 [07:57<03:50,  3.50s/it] 
+STAI.IO:  68%|######7   | 135/200 [08:00<03:47,  3.50s/it] 
+STAI.IO:  68%|######8   | 136/200 [08:04<03:45,  3.52s/it] 
+STAI.IO:  68%|######8   | 137/200 [08:08<03:45,  3.57s/it] 
+STAI.IO:  69%|######9   | 138/200 [08:11<03:44,  3.62s/it] 
+STAI.IO:  70%|######9   | 139/200 [08:15<03:43,  3.66s/it] 
+STAI.IO:  70%|#######   | 140/200 [08:19<03:41,  3.70s/it] 
+STAI.IO:  70%|#######   | 141/200 [08:22<03:34,  3.64s/it] 
+STAI.IO:  71%|#######1  | 142/200 [08:26<03:33,  3.69s/it] 
+STAI.IO:  72%|#######1  | 143/200 [08:30<03:32,  3.73s/it] 
+STAI.IO:  72%|#######2  | 144/200 [08:34<03:29,  3.74s/it] 
+STAI.IO:  72%|#######2  | 145/200 [08:38<03:26,  3.76s/it] 
+STAI.IO:  73%|#######3  | 146/200 [08:41<03:22,  3.75s/it] 
+STAI.IO:  74%|#######3  | 147/200 [08:45<03:19,  3.76s/it] 
+STAI.IO:  74%|#######4  | 148/200 [08:49<03:13,  3.73s/it] 
+STAI.IO:  74%|#######4  | 149/200 [08:52<03:09,  3.71s/it] 
+STAI.IO:  75%|#######5  | 150/200 [08:56<03:01,  3.62s/it] 
+STAI.IO:  76%|#######5  | 151/200 [08:59<02:57,  3.61s/it] 
+STAI.IO:  76%|#######6  | 152/200 [09:03<02:56,  3.68s/it] 
+STAI.IO:  76%|#######6  | 153/200 [09:07<02:53,  3.69s/it] 
+STAI.IO:  77%|#######7  | 154/200 [09:11<02:51,  3.73s/it] 
+STAI.IO:  78%|#######7  | 155/200 [09:15<02:48,  3.74s/it] 
+STAI.IO:  78%|#######8  | 156/200 [09:18<02:41,  3.68s/it] 
+STAI.IO:  78%|#######8  | 157/200 [09:22<02:36,  3.63s/it] 
+STAI.IO:  79%|#######9  | 158/200 [09:25<02:35,  3.69s/it] 
+STAI.IO:  80%|#######9  | 159/200 [09:29<02:32,  3.71s/it] 
+STAI.IO:  80%|########  | 160/200 [09:33<02:28,  3.70s/it] 
+STAI.IO:  80%|########  | 161/200 [09:37<02:23,  3.69s/it] 
+STAI.IO:  81%|########1 | 162/200 [09:40<02:21,  3.71s/it] 
+STAI.IO:  82%|########1 | 163/200 [09:44<02:17,  3.70s/it] 
+STAI.IO:  82%|########2 | 164/200 [09:48<02:12,  3.68s/it] 
+STAI.IO:  82%|########2 | 165/200 [09:51<02:07,  3.64s/it] 
+STAI.IO:  83%|########2 | 166/200 [09:55<02:04,  3.67s/it] 
+STAI.IO:  84%|########3 | 167/200 [09:59<02:01,  3.69s/it] 
+STAI.IO:  84%|########4 | 168/200 [10:02<01:58,  3.70s/it] 
+STAI.IO:  84%|########4 | 169/200 [10:06<01:55,  3.71s/it] 
+STAI.IO:  85%|########5 | 170/200 [10:10<01:51,  3.73s/it] 
+STAI.IO:  86%|########5 | 171/200 [10:14<01:48,  3.73s/it] 
+STAI.IO:  86%|########6 | 172/200 [10:17<01:44,  3.74s/it] 
+STAI.IO:  86%|########6 | 173/200 [10:21<01:40,  3.71s/it] 
+STAI.IO:  87%|########7 | 174/200 [10:25<01:36,  3.72s/it] 
+STAI.IO:  88%|########7 | 175/200 [10:29<01:33,  3.75s/it] 
+STAI.IO:  88%|########8 | 176/200 [10:32<01:29,  3.74s/it] 
+STAI.IO:  88%|########8 | 177/200 [10:36<01:26,  3.74s/it] 
+STAI.IO:  89%|########9 | 178/200 [10:40<01:22,  3.77s/it] 
+STAI.IO:  90%|########9 | 179/200 [10:44<01:18,  3.74s/it] 
+STAI.IO:  90%|######### | 180/200 [10:47<01:15,  3.77s/it] 
+STAI.IO:  90%|######### | 181/200 [10:51<01:11,  3.74s/it] 
+STAI.IO:  91%|#########1| 182/200 [10:55<01:07,  3.76s/it] 
+STAI.IO:  92%|#########1| 183/200 [10:59<01:04,  3.77s/it] 
+STAI.IO:  92%|#########2| 184/200 [11:02<00:59,  3.75s/it] 
+STAI.IO:  92%|#########2| 185/200 [11:06<00:55,  3.72s/it] 
+STAI.IO:  93%|#########3| 186/200 [11:10<00:52,  3.76s/it] 
+STAI.IO:  94%|#########3| 187/200 [11:14<00:48,  3.77s/it] 
+STAI.IO:  94%|#########3| 188/200 [11:17<00:45,  3.75s/it] 
+STAI.IO:  94%|#########4| 189/200 [11:21<00:40,  3.72s/it] 
+STAI.IO:  95%|#########5| 190/200 [11:25<00:37,  3.72s/it] 
+STAI.IO:  96%|#########5| 191/200 [11:28<00:33,  3.70s/it] 
+STAI.IO:  96%|#########6| 192/200 [11:32<00:29,  3.71s/it] 
+STAI.IO:  96%|#########6| 193/200 [11:36<00:25,  3.69s/it] 
+STAI.IO:  97%|#########7| 194/200 [11:39<00:22,  3.71s/it] 
+STAI.IO:  98%|#########7| 195/200 [11:43<00:18,  3.76s/it] 
+STAI.IO:  98%|#########8| 196/200 [11:47<00:14,  3.69s/it] 
+STAI.IO:  98%|#########8| 197/200 [11:51<00:11,  3.69s/it] 
+STAI.IO:  99%|#########9| 198/200 [11:54<00:07,  3.74s/it] 
+STAI.IO: 100%|#########9| 199/200 [11:58<00:03,  3.76s/it] 
+  ST.AI Profiling results v2.0 - "network" 
+  ------------------------------------------------------------------ 
+  nb sample(s)   :   200 
+  duration       :   538.719 ms by sample (533.049/543.597/1.584) 
+  CPU cycles     :   [32,159 48,488 430,894,625] 
+  ------------------------------------------------------------------ 
+   Inference time per node 
+   ----------------------------------------------------------------------------------------------------------------------- 
+   c_id    m_id   type             dur (ms)       %    cumul  CPU cycles                                  name 
+   ----------------------------------------------------------------------------------------------------------------------- 
+   0       -      epoch               0.095    0.0%     0.0%  [      30,064       45,210        1,061 ]   EpochBlock_1 
+   1       -      epoch (SW)         45.192    8.4%     8.4%  [          45           38   36,153,691 ]   EpochBlock_2 
+   2       -      epoch (SW)          0.883    0.2%     8.6%  [          44           98      706,268 ]   EpochBlock_3 
+   3       -      epoch (SW)         24.323    4.5%    13.1%  [          44           51   19,458,471 ]   EpochBlock_4 
+   4       -      epoch (SW)          0.860    0.2%    13.2%  [          44           95      688,128 ]   EpochBlock_5 
+   5       -      epoch (SW)         53.530    9.9%    23.2%  [          44           49   42,824,089 ]   EpochBlock_6 
+   6       -      epoch (SW)          0.866    0.2%    23.3%  [          44           91      692,310 ]   EpochBlock_7 
+   7       -      epoch (SW)         10.555    2.0%    25.3%  [          44           48    8,444,153 ]   EpochBlock_8 
+   8       -      epoch (SW)         44.096    8.2%    33.5%  [          44           95   35,276,615 ]   EpochBlock_9 
+   9       -      epoch (SW)          2.518    0.5%    34.0%  [          44           96    2,014,192 ]   EpochBlock_10 
+   10      -      epoch (SW)         39.326    7.3%    41.3%  [          44           45   31,460,408 ]   EpochBlock_11 
+   11      -      epoch (SW)          0.675    0.1%    41.4%  [          44           95      539,763 ]   EpochBlock_12 
+   12      -      epoch (SW)         11.529    2.1%    43.5%  [          44           53    9,223,424 ]   EpochBlock_13 
+   13      -      epoch (SW)         30.149    5.6%    49.1%  [          44           94   24,119,069 ]   EpochBlock_14 
+   14      -      epoch (SW)          0.987    0.2%    49.3%  [          44           82      789,804 ]   EpochBlock_15 
+   15      -      epoch (SW)         66.481   12.3%    61.6%  [          44           49   53,184,543 ]   EpochBlock_16 
+   16      -      epoch (SW)          0.987    0.2%    61.8%  [          44           94      789,405 ]   EpochBlock_17 
+   17      -      epoch (SW)         25.837    4.8%    66.6%  [          82           52   20,669,215 ]   EpochBlock_18 
+   18      -      epoch (SW)          0.272    0.1%    66.7%  [          44           91      217,213 ]   EpochBlock_19 
+   19      -      epoch (SW)         32.486    6.0%    72.7%  [          44           46   25,988,759 ]   EpochBlock_20 
+   20      -      epoch (SW)          0.954    0.2%    72.9%  [          44           94      763,415 ]   EpochBlock_21 
+   21      -      epoch (SW)         16.564    3.1%    76.0%  [          44           49   13,250,787 ]   EpochBlock_22 
+   22      -      epoch (SW)          0.283    0.1%    76.0%  [          44           95      226,464 ]   EpochBlock_23 
+   23      -      epoch (SW)          9.027    1.7%    77.7%  [          82           54    7,221,420 ]   EpochBlock_24 
+   24      -      epoch (SW)         13.449    2.5%    80.2%  [          44           99   10,759,311 ]   EpochBlock_25 
+   25      -      epoch (SW)          0.340    0.1%    80.2%  [          44           89      271,894 ]   EpochBlock_26 
+   26      -      epoch (SW)         19.837    3.7%    83.9%  [          44           51   15,869,390 ]   EpochBlock_27 
+   27      -      epoch (SW)          0.354    0.1%    84.0%  [          44           91      282,802 ]   EpochBlock_28 
+   28      -      epoch (SW)         11.992    2.2%    86.2%  [          44           50    9,593,183 ]   EpochBlock_29 
+   29      -      epoch (SW)          0.062    0.0%    86.2%  [          44           92       49,706 ]   EpochBlock_30 
+   30      -      epoch (SW)         14.673    2.7%    88.9%  [          44           48   11,738,668 ]   EpochBlock_31 
+   31      -      epoch (SW)          0.350    0.1%    89.0%  [          44           95      279,985 ]   EpochBlock_32 
+   32      -      epoch (SW)          4.847    0.9%    89.9%  [          44           54    3,877,369 ]   EpochBlock_33 
+   33      -      epoch (SW)          0.105    0.0%    89.9%  [          44           98       83,915 ]   EpochBlock_34 
+   34      -      epoch (SW)          5.362    1.0%    90.9%  [          44           58    4,289,113 ]   EpochBlock_35 
+   35      -      epoch (SW)         11.629    2.2%    93.1%  [          44           95    9,302,951 ]   EpochBlock_36 
+   36      -      epoch (SW)          0.200    0.0%    93.1%  [          44           86      159,910 ]   EpochBlock_37 
+   37      -      epoch (SW)          9.744    1.8%    94.9%  [          44           49    7,795,162 ]   EpochBlock_38 
+   38      -      epoch (SW)          0.205    0.0%    95.0%  [          44           96      164,114 ]   EpochBlock_39 
+   39      -      epoch (SW)         11.288    2.1%    97.1%  [          44           53    9,030,521 ]   EpochBlock_40 
+   40      -      epoch (SW)          0.033    0.0%    97.1%  [          82           92       26,080 ]   EpochBlock_41 
+   41      -      epoch (SW)         15.397    2.9%    99.9%  [          44           49   12,317,660 ]   EpochBlock_42 
+   42      -      epoch (SW)          0.241    0.0%   100.0%  [          44           95      193,000 ]   EpochBlock_43 
+   43      -      epoch (SW)          0.113    0.0%   100.0%  [          44           50       90,009 ]   EpochBlock_44 
+   44      -      epoch (SW)          0.018    0.0%   100.0%  [          44           39       14,083 ]   EpochBlock_45 
+   45      -      epoch (SW)          0.004    0.0%   100.0%  [          44           95        3,132 ]   EpochBlock_47 
+   ----------------------------------------------------------------------------------------------------------------------- 
+   total                            538.719                   [      32,159       48,488  430,894,625 ] 
+                                 1.86 inf/s                   [        0.0%         0.0%       100.0% ] 
+   ----------------------------------------------------------------------------------------------------------------------- 
+   Statistic per tensor 
+   ------------------------------------------------------------------------------------------- 
+   tensor   #     type[shape]:size             min     max     mean      std  name 
+   ------------------------------------------------------------------------------------------- 
+   I.0      200   f32[1,3,96,96]:110592     -2.118   2.640    0.023    1.148  Input_0_out_0 
+   O.0      200   f32[1,2]:8                -1.929   1.885   -0.013    0.854  Gemm_45_out_0 
+   ------------------------------------------------------------------------------------------- 
+Saving validation data... 
+ output directory: C:\Users\rakes\.stm32cubemx\network_output 
+ creating C:\Users\rakes\.stm32cubemx\network_output\network_val_io.npz 
+ m_outputs_1: (200, 2)/float64, min/max=[-1.929149, 1.884582], mean/std=[-0.012642, 0.854214], logits 
+ c_outputs_1: (200, 1, 1, 2)/float32, min/max=[-1.929149, 1.884582], mean/std=[-0.012642, 0.854214], logits 
+Computing the metrics... 
+ Cross accuracy report #1 (reference vs C-model) 
+ ---------------------------------------------------------------------------------------------------- 
+ notes: - data type is different: r/float64 instead p/float32 
+        - ACC metric is not computed ("--classifier" option can be used to force it) 
+        - the output of the reference model is used as ground truth/reference value 
+        - 200 samples (2 items per sample) 
+  acc=n.a. rmse=0.000000260 mae=0.000000205 l2r=0.000000304 mean=-0.000000 std=0.000000 nse=1.000000 cos=1.000000 
+ Evaluation report (summary) 
+ ------------------------------------------------------------------------------------------------------------------------------------------------- 
+ Output       acc    rmse          mae           l2r           mean        std        nse        cos        tensor 
+ ------------------------------------------------------------------------------------------------------------------------------------------------- 
+ X-cross #1   n.a.   0.000000260   0.000000205   0.000000304   -0.000000   0.000000   1.000000   1.000000   'logits', 200 x f32(1x2), m_id=[84] 
+ ------------------------------------------------------------------------------------------------------------------------------------------------- 
+  acc  : Accuracy (class, axis=-1) 
+  rmse : Root Mean Squared Error 
+  mae  : Mean Absolute Error 
+  l2r  : L2 relative error 
+  mean : Mean error 
+  std  : Standard deviation error 
+  nse  : Nash-Sutcliffe efficiency criteria, bigger is better, best=1, range=(-inf, 1] 
+  cos  : COsine Similarity, bigger is better, best=1, range=(0, 1] 
+Creating txt report file C:\Users\rakes\.stm32cubemx\network_output\network_validate_report.txt 
+elapsed time (validate): 756.805s 
+Validation ended
