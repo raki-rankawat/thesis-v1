@@ -1,0 +1,235 @@
+============================================================
+Seed 41
+============================================================
+Epoch   1/50 | LR 0.000999 | Train 58.10% | Val 61.53% ✅
+Epoch   2/50 | LR 0.000996 | Train 61.43% | Val 62.33% ✅
+Epoch   3/50 | LR 0.000991 | Train 62.81% | Val 62.27%
+Epoch   4/50 | LR 0.000984 | Train 64.97% | Val 56.67%
+Epoch   5/50 | LR 0.000976 | Train 66.46% | Val 63.60% ✅
+Epoch   6/50 | LR 0.000965 | Train 66.76% | Val 67.87% ✅
+Epoch   7/50 | LR 0.000952 | Train 67.51% | Val 66.60%
+Epoch   8/50 | LR 0.000938 | Train 69.29% | Val 69.13% ✅
+Epoch   9/50 | LR 0.000922 | Train 68.39% | Val 67.93%
+Epoch  10/50 | LR 0.000905 | Train 69.66% | Val 67.80%
+Epoch  11/50 | LR 0.000885 | Train 69.03% | Val 69.67% ✅
+Epoch  12/50 | LR 0.000864 | Train 69.90% | Val 70.33% ✅
+Epoch  13/50 | LR 0.000842 | Train 71.21% | Val 69.80%
+Epoch  14/50 | LR 0.000819 | Train 70.67% | Val 70.47% ✅
+Epoch  15/50 | LR 0.000794 | Train 72.09% | Val 71.33% ✅
+Epoch  16/50 | LR 0.000768 | Train 72.76% | Val 66.73%
+Epoch  17/50 | LR 0.000741 | Train 72.21% | Val 72.47% ✅
+Epoch  18/50 | LR 0.000713 | Train 72.90% | Val 73.27% ✅
+Epoch  19/50 | LR 0.000684 | Train 73.64% | Val 69.40%
+Epoch  20/50 | LR 0.000655 | Train 72.93% | Val 70.07%
+Epoch  21/50 | LR 0.000624 | Train 74.33% | Val 74.40% ✅
+Epoch  22/50 | LR 0.000594 | Train 74.43% | Val 73.60%
+Epoch  23/50 | LR 0.000563 | Train 74.94% | Val 67.07%
+Epoch  24/50 | LR 0.000531 | Train 74.30% | Val 74.20%
+Epoch  25/50 | LR 0.000500 | Train 74.99% | Val 72.47%
+Epoch  26/50 | LR 0.000469 | Train 76.40% | Val 73.47%
+Epoch  27/50 | LR 0.000437 | Train 76.29% | Val 74.67% ✅
+Epoch  28/50 | LR 0.000406 | Train 76.69% | Val 73.00%
+Epoch  29/50 | LR 0.000376 | Train 76.57% | Val 75.73% ✅
+Epoch  30/50 | LR 0.000345 | Train 76.99% | Val 77.40% ✅
+Epoch  31/50 | LR 0.000316 | Train 77.31% | Val 76.40%
+Epoch  32/50 | LR 0.000287 | Train 77.57% | Val 75.47%
+Epoch  33/50 | LR 0.000259 | Train 78.03% | Val 76.07%
+Epoch  34/50 | LR 0.000232 | Train 77.90% | Val 77.00%
+Epoch  35/50 | LR 0.000206 | Train 78.83% | Val 75.53%
+Epoch  36/50 | LR 0.000181 | Train 79.16% | Val 74.40%
+Epoch  37/50 | LR 0.000158 | Train 79.31% | Val 76.13%
+Epoch  38/50 | LR 0.000136 | Train 79.54% | Val 75.73%
+🛑 Early stopping at epoch 38  (best: 77.40% @ ep 30)
+
+✅ Best val acc: 77.40% @ epoch 30  (16.0 min)
+   Saved: /content/drive/My Drive/stm32-thesis/checkpoints/resnet_seed_41.pth
+
+============================================================
+Seed 52
+============================================================
+Epoch   1/50 | LR 0.000999 | Train 58.87% | Val 56.60% ✅
+Epoch   2/50 | LR 0.000996 | Train 63.54% | Val 60.07% ✅
+Epoch   3/50 | LR 0.000991 | Train 64.76% | Val 67.13% ✅
+Epoch   4/50 | LR 0.000984 | Train 67.24% | Val 68.73% ✅
+Epoch   5/50 | LR 0.000976 | Train 68.30% | Val 65.13%
+Epoch   6/50 | LR 0.000965 | Train 69.00% | Val 68.00%
+Epoch   7/50 | LR 0.000952 | Train 69.64% | Val 63.27%
+Epoch   8/50 | LR 0.000938 | Train 70.71% | Val 69.87% ✅
+Epoch   9/50 | LR 0.000922 | Train 70.90% | Val 70.67% ✅
+Epoch  10/50 | LR 0.000905 | Train 71.70% | Val 69.00%
+Epoch  11/50 | LR 0.000885 | Train 72.11% | Val 71.47% ✅
+Epoch  12/50 | LR 0.000864 | Train 71.99% | Val 63.73%
+Epoch  13/50 | LR 0.000842 | Train 72.43% | Val 73.27% ✅
+Epoch  14/50 | LR 0.000819 | Train 73.29% | Val 71.20%
+Epoch  15/50 | LR 0.000794 | Train 73.40% | Val 67.60%
+Epoch  16/50 | LR 0.000768 | Train 73.51% | Val 71.53%
+Epoch  17/50 | LR 0.000741 | Train 74.21% | Val 73.00%
+Epoch  18/50 | LR 0.000713 | Train 74.81% | Val 72.47%
+Epoch  19/50 | LR 0.000684 | Train 74.91% | Val 72.47%
+Epoch  20/50 | LR 0.000655 | Train 74.67% | Val 68.67%
+Epoch  21/50 | LR 0.000624 | Train 75.21% | Val 71.73%
+🛑 Early stopping at epoch 21  (best: 73.27% @ ep 13)
+
+✅ Best val acc: 73.27% @ epoch 13  (8.9 min)
+   Saved: /content/drive/My Drive/stm32-thesis/checkpoints/resnet_seed_52.pth
+
+============================================================
+Seed 63
+============================================================
+Epoch   1/50 | LR 0.000999 | Train 57.74% | Val 59.87% ✅
+Epoch   2/50 | LR 0.000996 | Train 60.73% | Val 61.13% ✅
+Epoch   3/50 | LR 0.000991 | Train 62.39% | Val 64.20% ✅
+Epoch   4/50 | LR 0.000984 | Train 63.96% | Val 63.73%
+Epoch   5/50 | LR 0.000976 | Train 63.13% | Val 62.80%
+Epoch   6/50 | LR 0.000965 | Train 64.91% | Val 66.60% ✅
+Epoch   7/50 | LR 0.000952 | Train 67.10% | Val 67.13% ✅
+Epoch   8/50 | LR 0.000938 | Train 68.03% | Val 67.27% ✅
+Epoch   9/50 | LR 0.000922 | Train 67.76% | Val 67.40% ✅
+Epoch  10/50 | LR 0.000905 | Train 69.19% | Val 66.80%
+Epoch  11/50 | LR 0.000885 | Train 68.76% | Val 70.40% ✅
+Epoch  12/50 | LR 0.000864 | Train 70.00% | Val 67.07%
+Epoch  13/50 | LR 0.000842 | Train 70.94% | Val 71.80% ✅
+Epoch  14/50 | LR 0.000819 | Train 70.69% | Val 70.00%
+Epoch  15/50 | LR 0.000794 | Train 70.50% | Val 71.40%
+Epoch  16/50 | LR 0.000768 | Train 71.86% | Val 72.47% ✅
+Epoch  17/50 | LR 0.000741 | Train 71.51% | Val 72.87% ✅
+Epoch  18/50 | LR 0.000713 | Train 72.44% | Val 71.20%
+Epoch  19/50 | LR 0.000684 | Train 73.06% | Val 73.33% ✅
+Epoch  20/50 | LR 0.000655 | Train 73.60% | Val 72.07%
+Epoch  21/50 | LR 0.000624 | Train 73.93% | Val 72.87%
+Epoch  22/50 | LR 0.000594 | Train 74.24% | Val 73.67% ✅
+Epoch  23/50 | LR 0.000563 | Train 75.20% | Val 72.33%
+Epoch  24/50 | LR 0.000531 | Train 74.97% | Val 74.53% ✅
+Epoch  25/50 | LR 0.000500 | Train 75.00% | Val 75.87% ✅
+Epoch  26/50 | LR 0.000469 | Train 75.51% | Val 75.60%
+Epoch  27/50 | LR 0.000437 | Train 76.23% | Val 75.27%
+Epoch  28/50 | LR 0.000406 | Train 76.50% | Val 73.47%
+Epoch  29/50 | LR 0.000376 | Train 76.77% | Val 75.73%
+Epoch  30/50 | LR 0.000345 | Train 77.23% | Val 73.73%
+Epoch  31/50 | LR 0.000316 | Train 77.77% | Val 75.40%
+Epoch  32/50 | LR 0.000287 | Train 77.51% | Val 77.13% ✅
+Epoch  33/50 | LR 0.000259 | Train 77.66% | Val 76.60%
+Epoch  34/50 | LR 0.000232 | Train 78.63% | Val 76.33%
+Epoch  35/50 | LR 0.000206 | Train 78.87% | Val 76.73%
+Epoch  36/50 | LR 0.000181 | Train 78.73% | Val 75.73%
+Epoch  37/50 | LR 0.000158 | Train 79.21% | Val 76.00%
+Epoch  38/50 | LR 0.000136 | Train 79.79% | Val 76.73%
+Epoch  39/50 | LR 0.000115 | Train 80.11% | Val 77.60% ✅
+Epoch  40/50 | LR 0.000095 | Train 80.04% | Val 77.93% ✅
+Epoch  41/50 | LR 0.000078 | Train 79.83% | Val 76.53%
+Epoch  42/50 | LR 0.000062 | Train 80.59% | Val 77.60%
+Epoch  43/50 | LR 0.000048 | Train 80.99% | Val 77.87%
+Epoch  44/50 | LR 0.000035 | Train 80.99% | Val 77.27%
+Epoch  45/50 | LR 0.000024 | Train 81.51% | Val 77.67%
+Epoch  46/50 | LR 0.000016 | Train 81.04% | Val 77.47%
+Epoch  47/50 | LR 0.000009 | Train 81.14% | Val 77.60%
+Epoch  48/50 | LR 0.000004 | Train 81.57% | Val 77.80%
+🛑 Early stopping at epoch 48  (best: 77.93% @ ep 40)
+
+✅ Best val acc: 77.93% @ epoch 40  (20.2 min)
+   Saved: /content/drive/My Drive/stm32-thesis/checkpoints/resnet_seed_63.pth
+
+============================================================
+Seed 74
+============================================================
+Epoch   1/50 | LR 0.000999 | Train 59.86% | Val 60.87% ✅
+Epoch   2/50 | LR 0.000996 | Train 62.86% | Val 55.20%
+Epoch   3/50 | LR 0.000991 | Train 63.21% | Val 60.80%
+Epoch   4/50 | LR 0.000984 | Train 64.74% | Val 56.00%
+Epoch   5/50 | LR 0.000976 | Train 66.83% | Val 64.40% ✅
+Epoch   6/50 | LR 0.000965 | Train 67.36% | Val 59.13%
+Epoch   7/50 | LR 0.000952 | Train 68.07% | Val 66.53% ✅
+Epoch   8/50 | LR 0.000938 | Train 69.76% | Val 63.87%
+Epoch   9/50 | LR 0.000922 | Train 70.56% | Val 65.67%
+Epoch  10/50 | LR 0.000905 | Train 71.06% | Val 71.80% ✅
+Epoch  11/50 | LR 0.000885 | Train 71.40% | Val 68.47%
+Epoch  12/50 | LR 0.000864 | Train 71.31% | Val 70.07%
+Epoch  13/50 | LR 0.000842 | Train 71.31% | Val 69.60%
+Epoch  14/50 | LR 0.000819 | Train 72.34% | Val 73.20% ✅
+Epoch  15/50 | LR 0.000794 | Train 71.89% | Val 68.87%
+Epoch  16/50 | LR 0.000768 | Train 73.54% | Val 73.47% ✅
+Epoch  17/50 | LR 0.000741 | Train 73.04% | Val 71.47%
+Epoch  18/50 | LR 0.000713 | Train 74.61% | Val 73.13%
+Epoch  19/50 | LR 0.000684 | Train 73.54% | Val 74.33% ✅
+Epoch  20/50 | LR 0.000655 | Train 73.93% | Val 76.13% ✅
+Epoch  21/50 | LR 0.000624 | Train 74.40% | Val 74.00%
+Epoch  22/50 | LR 0.000594 | Train 75.17% | Val 75.27%
+Epoch  23/50 | LR 0.000563 | Train 75.20% | Val 74.60%
+Epoch  24/50 | LR 0.000531 | Train 76.16% | Val 73.93%
+Epoch  25/50 | LR 0.000500 | Train 77.23% | Val 75.53%
+Epoch  26/50 | LR 0.000469 | Train 76.59% | Val 76.13%
+Epoch  27/50 | LR 0.000437 | Train 76.69% | Val 74.53%
+Epoch  28/50 | LR 0.000406 | Train 76.71% | Val 76.07%
+🛑 Early stopping at epoch 28  (best: 76.13% @ ep 20)
+
+✅ Best val acc: 76.13% @ epoch 20  (11.7 min)
+   Saved: /content/drive/My Drive/stm32-thesis/checkpoints/resnet_seed_74.pth
+
+============================================================
+Seed 85
+============================================================
+Epoch   1/50 | LR 0.000999 | Train 58.71% | Val 56.60% ✅
+Epoch   2/50 | LR 0.000996 | Train 61.77% | Val 61.47% ✅
+Epoch   3/50 | LR 0.000991 | Train 63.17% | Val 62.93% ✅
+Epoch   4/50 | LR 0.000984 | Train 63.01% | Val 64.93% ✅
+Epoch   5/50 | LR 0.000976 | Train 65.76% | Val 53.87%
+Epoch   6/50 | LR 0.000965 | Train 66.57% | Val 69.40% ✅
+Epoch   7/50 | LR 0.000952 | Train 67.30% | Val 66.00%
+Epoch   8/50 | LR 0.000938 | Train 68.31% | Val 58.00%
+Epoch   9/50 | LR 0.000922 | Train 69.06% | Val 70.53% ✅
+Epoch  10/50 | LR 0.000905 | Train 69.97% | Val 62.87%
+Epoch  11/50 | LR 0.000885 | Train 70.76% | Val 72.93% ✅
+Epoch  12/50 | LR 0.000864 | Train 71.20% | Val 69.07%
+Epoch  13/50 | LR 0.000842 | Train 71.10% | Val 71.67%
+Epoch  14/50 | LR 0.000819 | Train 71.99% | Val 70.00%
+Epoch  15/50 | LR 0.000794 | Train 71.91% | Val 72.13%
+Epoch  16/50 | LR 0.000768 | Train 72.10% | Val 71.33%
+Epoch  17/50 | LR 0.000741 | Train 73.87% | Val 73.00% ✅
+Epoch  18/50 | LR 0.000713 | Train 72.53% | Val 68.60%
+Epoch  19/50 | LR 0.000684 | Train 73.61% | Val 70.20%
+Epoch  20/50 | LR 0.000655 | Train 74.40% | Val 73.20% ✅
+Epoch  21/50 | LR 0.000624 | Train 74.51% | Val 73.13%
+Epoch  22/50 | LR 0.000594 | Train 75.26% | Val 73.47% ✅
+Epoch  23/50 | LR 0.000563 | Train 75.56% | Val 71.67%
+Epoch  24/50 | LR 0.000531 | Train 75.14% | Val 75.87% ✅
+Epoch  25/50 | LR 0.000500 | Train 76.40% | Val 74.87%
+Epoch  26/50 | LR 0.000469 | Train 76.21% | Val 75.47%
+Epoch  27/50 | LR 0.000437 | Train 76.74% | Val 75.73%
+Epoch  28/50 | LR 0.000406 | Train 77.39% | Val 75.27%
+Epoch  29/50 | LR 0.000376 | Train 77.04% | Val 76.20% ✅
+Epoch  30/50 | LR 0.000345 | Train 77.63% | Val 75.40%
+Epoch  31/50 | LR 0.000316 | Train 78.20% | Val 76.47% ✅
+Epoch  32/50 | LR 0.000287 | Train 78.53% | Val 75.07%
+Epoch  33/50 | LR 0.000259 | Train 78.44% | Val 76.87% ✅
+Epoch  34/50 | LR 0.000232 | Train 78.30% | Val 76.47%
+Epoch  35/50 | LR 0.000206 | Train 79.13% | Val 76.67%
+Epoch  36/50 | LR 0.000181 | Train 78.94% | Val 75.53%
+Epoch  37/50 | LR 0.000158 | Train 79.29% | Val 77.13% ✅
+Epoch  38/50 | LR 0.000136 | Train 79.70% | Val 76.07%
+Epoch  39/50 | LR 0.000115 | Train 79.96% | Val 76.40%
+Epoch  40/50 | LR 0.000095 | Train 80.19% | Val 77.47% ✅
+Epoch  41/50 | LR 0.000078 | Train 80.76% | Val 77.33%
+Epoch  42/50 | LR 0.000062 | Train 80.57% | Val 77.33%
+Epoch  43/50 | LR 0.000048 | Train 80.76% | Val 77.33%
+Epoch  44/50 | LR 0.000035 | Train 81.19% | Val 77.13%
+Epoch  45/50 | LR 0.000024 | Train 80.50% | Val 77.47%
+Epoch  46/50 | LR 0.000016 | Train 80.96% | Val 77.47%
+Epoch  47/50 | LR 0.000009 | Train 80.91% | Val 77.60% ✅
+Epoch  48/50 | LR 0.000004 | Train 82.41% | Val 77.73% ✅
+Epoch  49/50 | LR 0.000001 | Train 81.47% | Val 77.53%
+Epoch  50/50 | LR 0.000000 | Train 81.04% | Val 77.87% ✅
+
+✅ Best val acc: 77.87% @ epoch 50  (20.9 min)
+   Saved: /content/drive/My Drive/stm32-thesis/checkpoints/resnet_seed_85.pth
+
+============================================================
+Multi-seed summary  [resnet]
+============================================================
+  Seed 41: 77.40% @ ep 30
+  Seed 52: 73.27% @ ep 13
+  Seed 63: 77.93% @ ep 40
+  Seed 74: 76.13% @ ep 20
+  Seed 85: 77.87% @ ep 50
+  Mean ± Std: 76.52% ± 1.75%
+  Best: seed 63  77.93%
+  Checkpoint: /content/drive/My Drive/stm32-thesis/checkpoints/resnet_seed_63.pth

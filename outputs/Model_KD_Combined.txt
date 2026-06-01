@@ -1,0 +1,18 @@
+========================================================================
+Run                                   Val Acc  Δ baseline
+------------------------------------------------------------------------
+Teacher VGG_Pretrained                 89.07%
+Teacher ResNet_Pretrained                  —%
+------------------------------------------------------------------------
+MobileNetV2 baseline                   78.40%
+  VGG    → MobileNetV2  FT         80.00%  (+1.60%)
+  VGG    → MobileNetV2  Scratch     79.13%  (+0.73%)
+  ResNet → MobileNetV2  FT         79.33%  (+0.93%)
+  ResNet → MobileNetV2  Scratch     78.93%  (+0.53%)
+------------------------------------------------------------------------
+MobileNetV3 baseline                   79.13%
+  VGG    → MobileNetV3  FT         79.13%  (+0.00%)
+  VGG    → MobileNetV3  Scratch     80.33%  (+1.20%)
+  ResNet → MobileNetV3  FT         79.13%  (+0.00%)
+  ResNet → MobileNetV3  Scratch     78.93%  (-0.20%)
+========================================================================
