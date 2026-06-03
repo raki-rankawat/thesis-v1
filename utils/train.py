@@ -370,7 +370,8 @@ def train_kd(
     optimizer = torch.optim.Adam(student.parameters(), lr=lr, weight_decay=weight_decay)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
 
-    best_acc, patience_ctr = evaluate(student, val_loader, device), 0
+    initial_acc            = evaluate(student, val_loader, device)
+    best_acc, patience_ctr = initial_acc, 0
     torch.save(student.state_dict(), save_path)
     print(f"Initial student accuracy: {best_acc*100:.2f}%")
 
@@ -411,9 +412,12 @@ def train_kd(
             print(f"🛑 Early stopping at epoch {epoch}")
             break
 
-    elapsed = (time.time() - start) / 60
+    elapsed     = (time.time() - start) / 60
+    kd_improved = best_acc > initial_acc
     print(f"\n✅ Best KD val acc: {best_acc*100:.2f}%  ({elapsed:.1f} min)")
-    return best_acc, elapsed
+    if not kd_improved:
+        print(f"   ⚠️  No improvement over initial {initial_acc*100:.2f}% — checkpoint is the seed baseline")
+    return best_acc, elapsed, kd_improved
 
 
 # ── Plotting ──────────────────────────────────────────
